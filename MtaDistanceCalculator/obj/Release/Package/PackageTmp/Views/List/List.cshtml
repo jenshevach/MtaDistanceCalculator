@@ -1,0 +1,36 @@
+﻿<div id="bodyContainer" ng-app="StationListApp">
+	<section id="content">
+		<div class="container">
+			<div class="row">
+				<div class="container col" ng-controller="StationListCtrl" ng-init="loadStations()">
+					<div class="panel panel-default">
+						<div class="panel-heading">{{title}}</div>
+						<div class="panel-body">
+							<table class="table">
+								<tr>
+									<th>Id</th>
+									<th>MTA ID</th>
+									<th>Name</th>
+									<th>Latitude</th>
+									<th>Longitude</th>
+								</tr>
+								<tr ng-repeat="station in stations">
+									<td>{{station.id}}</td>
+									<td>{{station.mtaId}}</td>
+									<td>{{station.name}}</td>
+									<td>{{station.latitude}}</td>
+									<td>{{station.longitude}}</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+</div>
+@section scripts {
+	@Scripts.Render("~/Scripts/angular.js")
+	@Scripts.Render("~/Scripts/app/list-controller.js")
+}

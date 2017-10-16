@@ -1,0 +1,52 @@
+﻿<div id="bodyContainer" >
+	<section id="content">
+		<div class="container" ng-app="StationDistanceApp">
+			<div class="row">
+				<div class="container col" ng-controller="StationDistanceCtrl" ng-init="loadStations()">
+					<div class="panel panel-default">
+						<div class="panel-heading">{{title}}</div>
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-md-6 col-sm-12">
+									<div class="form-group">
+										<label for="stationA">Station A</label>
+										<select class="form-control" id="stationA" ng-model="stationA" ng-disabled="working" ng-change="checkButtons()">
+											<option ng-repeat="station in stations" value="{{station.id}}">{{station.name}}</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-md-6 col-sm-12">
+									<div class="form-group">
+										<label for="stationB">Station B</label>
+										<select class="form-control" id="stationB" ng-model="stationB" ng-disabled="working" ng-change="checkButtons()">
+											<option ng-repeat="station in stations" value="{{station.id}}">{{station.name}}</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="row" ng-if="showDistance">
+								<div class="col">
+									<div class="alert alert-info distance-box" role="alert">
+										Distance: {{distance}}
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6 col-sm-12">
+									<button type="button" class="btn btn-info" ng-click="clearStations()" ng-disabled="!clearBtnActive">Clear</button>									
+								</div>
+								<div class="col-md-6 col-sm-12">
+									<button type="button" class="btn btn-success" ng-click="calculateDistance()" ng-disabled="!calculateBtnActive">Calculate</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
+@section scripts {
+	@Scripts.Render("~/Scripts/angular.js")
+	@Scripts.Render("~/Scripts/app/station-controller.js")
+}
