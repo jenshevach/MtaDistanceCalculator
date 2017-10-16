@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using MtaDistanceCalculator.Models;
 
@@ -15,7 +16,9 @@ namespace MtaDistanceCalculator.Migrations
 
         protected override void Seed(MtaDistanceCalculatorContext context)
         {
-	        var stations = File.ReadAllLines("D:\\home\\site\\wwwroot\\Migrations\\stops.csv")
+	        var defaultSeedPath = "C://code//other//MtaDistanceCalculator//MtaDistanceCalculator//Migrations//stops.csv";
+	        var envSeedPath = Environment.GetEnvironmentVariable("SEED_DATA_PATH");
+	        var stations = File.ReadAllLines(envSeedPath ?? defaultSeedPath)
 	                                     .Select(Station.FromCsv)
 	                                     .ToList();
 

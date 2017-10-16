@@ -51,3 +51,4 @@ C:\code\other\MtaDistanceCalculator\MtaDistanceCalculator\obj\Debug\MtaDistanceC
 C:\code\other\MtaDistanceCalculator\MtaDistanceCalculator\obj\Debug\MtaDistanceCalculator.csproj.CoreCompileInputs.cache
 C:\code\other\MtaDistanceCalculator\MtaDistanceCalculator\obj\Debug\MtaDistanceCalculator.dll
 C:\code\other\MtaDistanceCalculator\MtaDistanceCalculator\obj\Debug\MtaDistanceCalculator.pdb
+C:\code\other\MtaDistanceCalculator\MtaDistanceCalculator\obj\Debug\MtaDistanceCalculator.csprojResolveAssemblyReference.cache
